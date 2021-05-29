@@ -62,7 +62,7 @@
 
 - Row IDentifier
 
-![.img/RID_Untitled.png](./img/RID_Untitled.png)
+![.img/RID_Untitled.png](./img_0527/RID_Untitled.png)
 
 - 페이지에 레코드가 PK로 정렬이 돼있다! 라고 했지만 실제로 완벽하게 안돼있음.
 
@@ -81,9 +81,9 @@
 - 하단에, `슬롯` 이란것이 있음
   - 해당하는 레코드가 어디에있는지 적어줌
   - 레코드는 앞에서 뒤로 append를 함
-![img/RID_Untitled%201.png](./img/RID_Untitled%201.png)
+![img/RID_Untitled%201.png](./img_0527/RID_Untitled%201.png)
 - 그럼 레코드의 주소를 뒤에서 앞으로 `슬롯`에 작성
-![.img/RID_Untitled%202.png](./img/RID_Untitled%202.png)
+![.img/RID_Untitled%202.png](./img_0527/RID_Untitled%202.png)
 - RID `page #, slot #`
 - 슬롯은 고정크기
 - 그래서 실제 b+tree에는 rid가 붙어있음
@@ -181,7 +181,7 @@
 - 우리가 데이터베이스에 트랜잭션을 동시에 실행했는데, 그 결과가 시리얼 스케줄의 하나와 똑같다 하면 시리얼라이저블
 - 시리얼 라이저블은 동시에 했지만 그 결과가 시리얼 스케줄중 하나라고 하면 정상적으로 실행됐다고 볼 수 있음.
 - 데이터베이스 트랜잭션을 수행했을때, 아주 정상적인 결과
-![./img/Untitled.png](./img/Untitled.png)
+![./img/Untitled.png](./img_0527/Untitled.png)
 
 ```text
 T1, T3: 트랜잭션
@@ -192,7 +192,7 @@ x = 10*2 + 3 = 23
 - 26,23 모두 방해받지 않고 연산됐으니 정상적인 결과 (Serializable)
 - 13,20이 안좋은 결과
 
-![./img/Untitled%201.png](./img/Untitled%201.png)
+![./img/Untitled%201.png](./img_0527/Untitled%201.png)
 
 ```text
 동시에 예매 클릭했을때, 셋중에 누가 수량부족해서 예매 취소 되는지는 상관없다는 거군요. 적정 숫자만큼 티켓이 예매되는게 중요하지
@@ -219,7 +219,7 @@ x = 10*2 + 3 = 23
 
 ### **Lost Update Problem**
 
-![./img/Untitled%202.png](./img/Untitled%202.png)
+![./img/Untitled%202.png](./img_0527/Untitled%202.png)
 
 - 두 개의 트랜잭션이 동시에 한 아이템의 데이터를 변경했을 때 발생하는 문제점
 - **트랜잭션을 지원하는 데이터베이스에서는 발생하면 안 됨**
@@ -289,27 +289,27 @@ SET GLOBAL transaction_isolation='REPEATABLE-READ';
 SET SESSION transaction_isolation='SERIALIZABLE';
 ```
 
-![./img/Untitled%203.png](./img/Untitled%203.png)
+![./img/Untitled%203.png](./img_0527/Untitled%203.png)
 
 - 디폴트가 repetable-read인걸 확인할 수 있음.
 - 현재 세션의 isolation 레벨을 제일 낮은거로 변경
 
-![./img/Untitled%204.png](./img/Untitled%204.png)
-![./img/Untitled%205.png](./img/Untitled%205.png)
+![./img/Untitled%204.png](./img_0527/Untitled%204.png)
+![./img/Untitled%205.png](./img_0527/Untitled%205.png)
 
 - 트랜잭션 문제점들이 많이 생기는데, 장점은 속도가 엄청 빠름!
-![./img/Untitled%206.png](./img/Untitled%206.png)
-![./img/Untitled%207.png](./img/Untitled%207.png)
+![./img/Untitled%206.png](./img_0527/Untitled%206.png)
+![./img/Untitled%207.png](./img_0527/Untitled%207.png)
 
 ## 1번 세션에서 데이터 업데이트
 
-![./img/Untitled%208.png](./img/Untitled%208.png)
+![./img/Untitled%208.png](./img_0527/Untitled%208.png)
 
 - 트랜잭션 중이지만!
 
 ## 2번 세션에서 바로 반영이 돼있음.
 
-![./img/Untitled%209.png](./img/Untitled%209.png)
+![./img/Untitled%209.png](./img_0527/Untitled%209.png)
 
 ## 1번세션에서 롤백을 하면, 2번세션에서도 롤백
 
@@ -323,23 +323,23 @@ SET SESSION transaction_isolation='SERIALIZABLE';
 
 ## 1,2번 세션에 모두 적용
 
-![./img/Untitled%2010.png](./img/Untitled%2010.png)
+![./img/Untitled%2010.png](./img_0527/Untitled%2010.png)
 
-![./img/Untitled%2011.png](./img/Untitled%2011.png)
+![./img/Untitled%2011.png](./img_0527/Untitled%2011.png)
 
 # 1번 세션
 
-![./img/Untitled%2012.png](./img/Untitled%2012.png)
+![./img/Untitled%2012.png](./img_0527/Untitled%2012.png)
 
 # 2번 세션
 
 - 커밋이 되지 않아서 스타브가 바뀌지 않았고, 여전히 6번임.
 
-![./img/Untitled%2013.png](./img/Untitled%2013.png)
+![./img/Untitled%2013.png](./img_0527/Untitled%2013.png)
 
 # 1번에서 commit을 하면~2번세션에서도 반영
 
-![./img/Untitled%2014.png](./img/Untitled%2014.png)
+![./img/Untitled%2014.png](./img_0527/Untitled%2014.png)
 
 - **Non-repeatable Read Problem** 문제가 발생
 
@@ -347,11 +347,11 @@ SET SESSION transaction_isolation='SERIALIZABLE';
 
 # 1,2번 세션에서 적용
 
-![./img/Untitled%2015.png](./img/Untitled%2015.png)
+![./img/Untitled%2015.png](./img_0527/Untitled%2015.png)
 
 # 1번 세션에서
 
-![./img/Untitled%2016.png](./img/Untitled%2016.png)
+![./img/Untitled%2016.png](./img_0527/Untitled%2016.png)
 
 # 1번세션에서 커밋을 해도 2번 세션에서
 
@@ -363,7 +363,7 @@ SET SESSION transaction_isolation='SERIALIZABLE';
 
 - 이럴떈 리드 커미티드 모드가 더맞음.
 
-![./img/Untitled%2017.png](./img/Untitled%2017.png)
+![./img/Untitled%2017.png](./img_0527/Untitled%2017.png)
 
 ---
 
@@ -371,9 +371,9 @@ SET SESSION transaction_isolation='SERIALIZABLE';
 
 # 1,2번 세션에 적용
 
-![./img/Untitled%2018.png](./img/Untitled%2018.png)
+![./img/Untitled%2018.png](./img_0527/Untitled%2018.png)
 
-![./img/Untitled%2019.png](./img/Untitled%2019.png)
+![./img/Untitled%2019.png](./img_0527/Untitled%2019.png)
 
 - 문제가 아무것도 일어나지 않아서 느림
 
@@ -381,16 +381,16 @@ SET SESSION transaction_isolation='SERIALIZABLE';
 
 - 읽을때 shared lock
 
-![./img/Untitled%2020.png](./img/Untitled%2020.png)
+![./img/Untitled%2020.png](./img_0527/Untitled%2020.png)
 
 # 1번 세션에서 업데이트
 
 - 반영이 안됨.
 - 2번 세션에서 락을 해제해야함
 
-![./img/Untitled%2021.png](./img/Untitled%2021.png)
+![./img/Untitled%2021.png](./img_0527/Untitled%2021.png)
 
-![./img/Untitled%2022.png](./img/Untitled%2022.png)
+![./img/Untitled%2022.png](./img_0527/Untitled%2022.png)
 
 - 읽기랑 쓰기랑 동시에 쓰고있어서 그런거임
 
@@ -399,11 +399,11 @@ SET SESSION transaction_isolation='SERIALIZABLE';
 - 남이 뭘하고 있으면 아무것도 안함
 - 내가 게시판에 글을 쓰고있으면 아무도 그 게시판 글을 볼 수 없음
 
-![./img/Untitled%2023.png](./img/Untitled%2023.png)
+![./img/Untitled%2023.png](./img_0527/Untitled%2023.png)
 
-![./img/Untitled%2024.png](./img/Untitled%2024.png)
+![./img/Untitled%2024.png](./img_0527/Untitled%2024.png)
 
-![./img/Untitled%2025.png](./img/Untitled%2025.png)
+![./img/Untitled%2025.png](./img_0527/Untitled%2025.png)
 
 ```python
 이노님이 모두에게:  12:26 PM
