@@ -1,3 +1,6 @@
+# Database Playground
+- 데이터베이스는 킹핀
+
 # SQL-First-Step-Tutor
 SQL 첫걸음(아사이아츠시/한빛미디어) 책 학습
 
