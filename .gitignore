@@ -557,3 +557,5 @@ application.windows64
 application.macosx
 out
 
+/setup/data/
+/setup/ca.crt
