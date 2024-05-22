@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+
+
+  postgres:
+    image: postgres:16
+    container_name: my_postgres_learn
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dong-test
